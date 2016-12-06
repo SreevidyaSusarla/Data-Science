@@ -24,7 +24,6 @@ public class Cluster {
  
 		kmeans.setSeed(10);
  
-		//important parameter to set: preserver order, number of cluster.
 		kmeans.setPreserveInstancesOrder(true);
 		kmeans.setNumClusters(5);
  
@@ -35,14 +34,13 @@ public class Cluster {
  
 		kmeans.buildClusterer(data);
  
-		// This array returns the cluster number (starting with 0) for each instance
-		// The array has as many elements as the number of instances
+		
 		int[] assignments = kmeans.getAssignments();
  
 		int i=0;
 		int cust0=0,cust1=0,cust2=0,cust3=0,cust4=0;
 		for(int clusterNum : assignments) {
-		    //System.out.printf("Instance %d -> Cluster %d \n", i, clusterNum);
+		    
 		    if(clusterNum==0)
 		    {
 		    	cust0++;
